@@ -4,10 +4,13 @@ chapter: 4
 sections:
   - title: Complete Reference List
     id: complete-reference-list
+  references:
+    - nist-framework
 ---
 
 <script>
   import References from '$lib/components/References.svelte';
+  import { references as allReferences } from '$lib/data/references';
 </script>
 
 # {title}
@@ -16,4 +19,4 @@ sections:
 
 A comprehensive list of all sources cited in this book:
 
-<References citationIds={references} showHeader={false} /> 
+<References citationIds={allReferences.map(ref => ref.id)} showHeader={false} /> 
