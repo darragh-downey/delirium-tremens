@@ -1,6 +1,11 @@
 ---
 title: Defending Critical Infrastructure
+references: []
 ---
+
+<script>
+  import References from '$lib/components/References.svelte';
+</script>
 
 # {title}
 
@@ -15,4 +20,4 @@ Welcome to a comprehensive guide on protecting critical infrastructure systems. 
 
 ## References
 
-<References citationIds={metadata.references} /> 
+<References citationIds={references} /> 
