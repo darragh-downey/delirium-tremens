@@ -30,7 +30,7 @@
 					<div class="ml-8 border-l border-slate-200 dark:border-slate-800">
 						{#each chapter.sections as section}
 							<a
-								href="/book/{chapter.slug}#{section.id}"
+								href="/oit-cyber-book/book/{chapter.chapter.toString().padStart(2, '0')}-{chapter.slug}#{section.id}"
 								class="block py-1 pl-4 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
 							>
 								{section.title}

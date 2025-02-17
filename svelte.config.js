@@ -16,6 +16,13 @@ const config = {
 		}),
 		paths: {
 			base: process.env.NODE_ENV === 'production' ? '/oit-cyber-book' : ''
+		},
+		prerender: {
+			handleHttpError: ({ path, referrer, message }) => {
+				// Ignore 404s
+				if (message.includes('Not found')) return;
+				throw new Error(message);
+			}
 		}
 	},
 
