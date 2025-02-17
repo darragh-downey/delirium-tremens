@@ -36,4 +36,4 @@ A systematic approach to evaluating threats includes:
 - Impact Analysis
 - Mitigation Strategies
 
-<References citationIds={metadata.references} /> 
+<References citationIds={references} /> 

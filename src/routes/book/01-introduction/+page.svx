@@ -12,6 +12,8 @@ references:
 ---
 
 <script>
+  export let title;
+  export let references;
   import References from '$lib/components/References.svelte';
 </script>
 
@@ -30,6 +32,6 @@ Cybersecurity refers to the practice of protecting systems, networks, and progra
 
 In today's connected world, everyone benefits from advanced cyber defense programs. On an individual level, a cybersecurity attack can result in everything from identity theft to extortion attempts...
 
-<References citationIds={metadata.references} />
+<References citationIds={references} />
 
 [^1]: NIST Framework for Improving Critical Infrastructure Cybersecurity (2018) 

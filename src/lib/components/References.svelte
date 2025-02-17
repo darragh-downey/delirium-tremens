@@ -20,7 +20,7 @@
 				<span class="font-medium">{ref.title}.</span>
 				<span class="italic">{ref.source}.</span>
 				{#if ref.url}
-					<a href={ref.url} class="text-sky-500 hover:text-sky-600 dark:text-sky-400"> [Link] </a>
+					<a href={ref.url} class="text-[#FF1493] hover:text-[#FF69B4] no-underline"> [Link] </a>
 				{/if}
 				{#if ref.doi}
 					<span>DOI: {ref.doi}</span>

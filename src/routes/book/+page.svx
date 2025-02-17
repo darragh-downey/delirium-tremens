@@ -4,6 +4,7 @@ references: []
 ---
 
 <script>
+  export let title;
   import References from '$lib/components/References.svelte';
 </script>
 

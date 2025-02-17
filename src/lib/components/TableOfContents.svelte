@@ -12,34 +12,31 @@
 	$: currentPath = $page.url.pathname;
 </script>
 
-<ul role="list" class="space-y-2">
+<div class="text-white">
 	{#each chapters as chapter}
-		<li>
-			<div class="group">
-				<a
-					href="{base}/book/{chapter.slug}"
-					class="flex items-center py-2 text-sm font-medium {currentPath === `/book/${chapter.slug}`
-						? 'text-sky-500'
-						: 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'}"
-				>
-					<span class="mr-4 text-slate-400 dark:text-slate-600">
-						{chapter.chapter.toString().padStart(2, '0')}
-					</span>
-					{chapter.title}
-				</a>
-				{#if chapter.sections}
-					<div class="ml-8 border-l border-slate-200 dark:border-slate-800">
-						{#each chapter.sections as section}
+		<div class="mb-4">
+			<a
+				href="{base}/book/{chapter.slug}"
+				class="text-white hover:text-[#FF1493] no-underline transition-colors duration-200 {
+					currentPath.includes(chapter.slug) ? 'text-[#FF1493]' : ''
+				}"
+			>
+				<span class="text-[#FF1493]">{chapter.chapter}.</span> {chapter.title}
+			</a>
+			{#if chapter.sections}
+				<ul class="mt-2 space-y-2 border-l border-[#FF1493] pl-4">
+					{#each chapter.sections as section}
+						<li>
 							<a
 								href="{base}/book/{chapter.slug}#{section.id}"
-								class="block py-1 pl-4 text-sm text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-slate-300"
+								class="text-gray-300 hover:text-[#FF1493] no-underline"
 							>
 								{section.title}
 							</a>
-						{/each}
-					</div>
-				{/if}
-			</div>
-		</li>
+						</li>
+					{/each}
+				</ul>
+			{/if}
+		</div>
 	{/each}
-</ul>
+</div>

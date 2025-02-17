@@ -1,8 +1,12 @@
-<footer class="mt-auto border-t border-gray-200 py-6 dark:border-gray-800">
-	<div class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-		<div class="flex items-center justify-between text-sm text-gray-500 dark:text-gray-400">
-			<p>© {new Date().getFullYear()} OIT Cyber</p>
-			<p class="italic">built on the shoulders of giants</p>
+<footer class="border-t border-transparent bg-[#1C1C1C]">
+	<div
+		class="mx-auto max-w-7xl px-4 py-6 sm:px-6 md:flex md:items-center md:justify-between lg:px-8"
+	>
+		<div class="text-center md:text-left">
+			<p class="text-sm text-white">&copy; 2024 OIT Cyber. All rights reserved.</p>
+		</div>
+		<div class="mt-4 flex justify-center md:ml-6 md:mt-0">
+			<p class="text-sm text-[#FF1493]">standing on the shoulders of giants</p>
 		</div>
 	</div>
 </footer>

@@ -4,11 +4,10 @@ chapter: 4
 sections:
   - title: Complete Reference List
     id: complete-reference-list
-  references:
-    - nist-framework
 ---
 
 <script>
+  export let title;
   import References from '$lib/components/References.svelte';
   import { references as allReferences } from '$lib/data/references';
 </script>
