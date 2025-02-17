@@ -16,7 +16,7 @@
 		<li>
 			<div class="group">
 				<a
-					href="{$page.url.pathname.startsWith('/oit-cyber-book') ? '/oit-cyber-book' : ''}/book/{chapter.chapter.toString().padStart(2, '0')}-{chapter.slug}"
+					href="/oit-cyber-book/book/{chapter.chapter.toString().padStart(2, '0')}-{chapter.slug}"
 					class="flex items-center py-2 text-sm font-medium {currentPath === `/book/${chapter.slug}`
 						? 'text-sky-500'
 						: 'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white'}"
