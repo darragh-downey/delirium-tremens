@@ -10,12 +10,9 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 
 	kit: {
-		adapter: adapter({
-			fallback: '404.html',
-			precompress: true
-		}),
+		adapter: adapter(),
 		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/oit-cyber-book' : ''
+			base: '/book'
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
