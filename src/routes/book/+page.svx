@@ -1,0 +1,18 @@
+---
+title: Defending Critical Infrastructure
+---
+
+# {title}
+
+Welcome to a comprehensive guide on protecting critical infrastructure systems. This book covers essential concepts, strategies, and best practices for securing vital systems and networks that support our society's critical operations.
+
+## Table of Contents
+
+1. [Introduction to Cybersecurity](./01-introduction)
+2. [Basic Security Concepts](./02-basics)
+3. [Threat Analysis](./03-threats)
+4. [Bibliography](./references)
+
+## References
+
+<References citationIds={metadata.references} /> 

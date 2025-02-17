@@ -1,0 +1,11 @@
+---
+title: Bibliography
+---
+
+<script>
+  import References from '$lib/components/References.svelte';
+</script>
+
+# Complete Bibliography
+
+<References /> 

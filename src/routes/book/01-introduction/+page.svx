@@ -1,0 +1,37 @@
+---
+title: Introduction to Cybersecurity
+chapter: 1
+sections:
+  - title: What is Cybersecurity?
+    id: what-is-cybersecurity
+  - title: Why is Cybersecurity Important?
+    id: why-is-cybersecurity-important
+references:
+  - nist-framework
+  - other-citation-id
+---
+
+<script>
+  import References from '$lib/components/References.svelte';
+</script>
+
+# {title}
+
+## What is Cybersecurity?
+
+Cybersecurity refers to the practice of protecting systems, networks, and programs from digital attacks. These attacks are usually aimed at:
+
+- Accessing sensitive information
+- Changing or destroying critical information
+- Extorting money from users
+- Interrupting normal business processes
+
+## Why is Cybersecurity Important?
+
+In today's connected world, everyone benefits from advanced cyber defense programs. On an individual level, a cybersecurity attack can result in everything from identity theft to extortion attempts...
+
+## References
+
+<References citationIds={metadata.references} />
+
+[^1]: NIST Framework for Improving Critical Infrastructure Cybersecurity (2018) 
