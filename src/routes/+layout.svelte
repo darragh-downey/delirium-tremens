@@ -36,7 +36,7 @@
 					</svg>
 				</button>
 				<div class="flex items-center space-x-4">
-					<img src="/OIT_transparent_2.svg" alt="Book Logo" class="h-auto w-32 py-12" />
+					<img src="{base}/OIT_transparent_2.svg" alt="Book Logo" class="h-auto w-32 py-12" />
 				</div>
 
 				<div class="flex items-center space-x-4">
