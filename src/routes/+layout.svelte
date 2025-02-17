@@ -1,13 +1,17 @@
 <script lang="ts">
 	import '../app.css';
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
+	import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+
+	let isSidebarOpen = false;
 
 	const chapters = [
 		{
 			title: 'Introduction to Cybersecurity',
-			slug: 'introduction',
+			slug: '01-introduction',
 			chapter: 1,
 			sections: [
 				{ title: 'What is Cybersecurity?', id: 'what-is-cybersecurity' },
@@ -16,30 +20,50 @@
 		},
 		{
 			title: 'Basic Security Concepts',
-			slug: 'basics',
+			slug: '02-basics',
 			chapter: 2
 		},
 		{
 			title: 'Threat Analysis',
-			slug: 'threats',
+			slug: '03-threats',
 			chapter: 3
 		}
 	];
 
 	$: isBookRoute = $page.url.pathname.startsWith('/book');
+	$: currentSlug = $page.url.pathname.split('/').pop() || '';
 </script>
 
 {#if isBookRoute}
-	<div class="flex min-h-screen flex-col bg-white dark:bg-slate-900">
+	<div class="flex min-h-[100dvh] flex-col bg-white dark:bg-slate-900">
 		<!-- Header -->
 		<header
-			class="sticky top-0 z-50 flex h-16 w-full shrink-0 items-center border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-slate-900"
+			class="fixed top-0 z-50 flex h-16 w-full shrink-0 items-center border-b border-gray-200 bg-white px-4 dark:border-gray-800 dark:bg-slate-900"
 		>
 			<div class="flex flex-1 items-center justify-between">
+				<!-- Mobile menu button -->
+				<button
+					type="button"
+					class="lg:hidden -ml-0.5 -mt-0.5 inline-flex h-10 w-10 items-center justify-center rounded-md hover:text-slate-900 dark:hover:text-white"
+					on:click={() => (isSidebarOpen = !isSidebarOpen)}
+				>
+					<span class="sr-only">Open sidebar</span>
+					<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							d="M4 6h16M4 12h16M4 18h16"
+						/>
+					</svg>
+				</button>
 				<div class="flex items-center space-x-4">
-					<span class="text-xl font-bold text-gray-900 dark:text-white"
-						>Defending Critical Infrastructure</span
+					<a
+						href="{base}/book"
+						class="text-xl font-bold text-gray-900 hover:text-gray-600 dark:text-white dark:hover:text-gray-300"
 					>
+						Defending Critical Infrastructure
+					</a>
 				</div>
 				<div class="flex items-center space-x-4">
 					<a
@@ -57,10 +81,21 @@
 			</div>
 		</header>
 
-		<div class="max-w-8xl relative mx-auto flex flex-1">
+		<div class="max-w-8xl relative mx-auto flex flex-1 pt-16">
+			<!-- Mobile sidebar backdrop -->
+			{#if isSidebarOpen}
+				<div
+					role="button"
+					tabindex="0"
+					class="fixed inset-0 z-40 bg-slate-900/50 backdrop-blur-sm lg:hidden"
+					on:click={() => (isSidebarOpen = false)}
+					on:keydown={(e) => e.key === 'Escape' && (isSidebarOpen = false)}
+				></div>
+			{/if}
+
 			<!-- Sidebar -->
 			<aside
-				class="fixed bottom-0 left-0 top-16 hidden w-72 overflow-y-auto border-r border-gray-200 px-4 pb-10 pt-6 lg:block dark:border-gray-800"
+				class="fixed bottom-0 left-0 top-16 z-40 w-72 transform overflow-y-auto border-r border-gray-200 bg-white px-4 pb-10 pt-6 transition-transform duration-300 ease-in-out dark:border-gray-800 dark:bg-slate-900 lg:block {isSidebarOpen ? 'translate-x-0' : '-translate-x-full lg:translate-x-0'}"
 			>
 				<nav class="text-base lg:text-sm">
 					<TableOfContents {chapters} />
@@ -68,12 +103,13 @@
 			</aside>
 
 			<!-- Main content -->
-			<main class="w-full lg:pl-72">
+			<main class="min-h-[calc(100dvh-4rem)] w-full lg:pl-72">
 				<div class="px-4 py-10 sm:px-6 lg:px-8">
 					<article
-						class="prose prose-slate max-w-none lg:prose-lg dark:prose-invert prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal"
+						class="prose prose-slate mx-auto max-w-[calc(100vw-2rem)] lg:max-w-3xl dark:prose-invert prose-headings:scroll-mt-28 prose-headings:font-display prose-headings:font-normal prose-a:break-words"
 					>
 						<slot />
+						<ChapterNavigation {chapters} {currentSlug} />
 					</article>
 				</div>
 			</main>

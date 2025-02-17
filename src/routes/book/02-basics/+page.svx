@@ -1,8 +1,39 @@
 ---
 title: Basic Security Concepts
 chapter: 2
+sections:
+  - title: Security Fundamentals
+    id: security-fundamentals
+  - title: Core Security Principles
+    id: core-security-principles
+references:
+  - nist-framework
 ---
+
+<script>
+  import References from '$lib/components/References.svelte';
+</script>
 
 # {title}
 
-This chapter covers fundamental security concepts... 
+## Security Fundamentals
+
+The foundation of cybersecurity rests on several key concepts:
+
+- Confidentiality
+- Integrity
+- Availability
+- Authentication
+- Authorization
+- Accountability
+
+## Core Security Principles
+
+Understanding these core principles helps establish a robust security posture:
+
+- Defense in Depth
+- Principle of Least Privilege
+- Separation of Duties
+- Zero Trust Architecture
+
+<References citationIds={metadata.references} /> 

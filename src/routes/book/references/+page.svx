@@ -1,11 +1,19 @@
 ---
 title: Bibliography
+chapter: 4
+sections:
+  - title: Complete Reference List
+    id: complete-reference-list
 ---
 
 <script>
   import References from '$lib/components/References.svelte';
 </script>
 
-# Complete Bibliography
+# {title}
 
-<References /> 
+## Complete Reference List
+
+A comprehensive list of all sources cited in this book:
+
+<References citationIds={references} showHeader={false} /> 

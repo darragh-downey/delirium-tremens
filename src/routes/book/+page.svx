@@ -13,11 +13,9 @@ Welcome to a comprehensive guide on protecting critical infrastructure systems. 
 
 ## Table of Contents
 
-1. [Introduction to Cybersecurity](01-introduction)
-2. [Basic Security Concepts](02-basics)
-3. [Threat Analysis](03-threats)
-4. [Bibliography](references)
-
-## References
+1. [Introduction to Cybersecurity](book/01-introduction)
+2. [Basic Security Concepts](book/02-basics)
+3. [Threat Analysis](book/03-threats)
+4. [Bibliography](book/references)
 
 <References citationIds={references} /> 

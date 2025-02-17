@@ -30,8 +30,6 @@ Cybersecurity refers to the practice of protecting systems, networks, and progra
 
 In today's connected world, everyone benefits from advanced cyber defense programs. On an individual level, a cybersecurity attack can result in everything from identity theft to extortion attempts...
 
-## References
-
 <References citationIds={metadata.references} />
 
 [^1]: NIST Framework for Improving Critical Infrastructure Cybersecurity (2018) 

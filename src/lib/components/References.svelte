@@ -2,6 +2,7 @@
 	import { references, type Reference } from '$lib/data/references';
 
 	export let citationIds: string[] = [];
+	export let showHeader = true;
 
 	$: citations = references
 		.filter((ref) => citationIds.includes(ref.id))
@@ -9,6 +10,9 @@
 </script>
 
 <div class="references">
+	{#if showHeader}
+		<h2>References</h2>
+	{/if}
 	<ul class="list-none space-y-4 pl-0">
 		{#each citations as ref}
 			<li class="citation">
