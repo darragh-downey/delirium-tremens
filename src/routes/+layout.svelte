@@ -10,7 +10,7 @@
 	// Move chapters to a separate store or data file
 	import { chapters } from '$lib/data/chapters';
 
-	$: isBookRoute = $page.url.pathname.startsWith('/book');
+	$: isBookRoute = $page.url.pathname.includes('/book');
 </script>
 
 {#if isBookRoute}
@@ -40,7 +40,7 @@
 				</div>
 
 				<div class="flex items-center space-x-4">
-					<a href="{base}/book" class="text-xl font-bold text-white hover:text-gray-300">
+					<a href="{base}/book/" class="text-xl font-bold text-white hover:text-gray-300">
 						Defending Critical Infrastructure
 					</a>
 				</div>

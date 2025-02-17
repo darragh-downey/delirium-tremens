@@ -10,9 +10,11 @@ const config = {
 	preprocess: [vitePreprocess(), mdsvex(mdsvexConfig)],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({
+			fallback: '404.html'
+		}),
 		paths: {
-			base: '/book'
+			base: '/critical-infrastructure'
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
