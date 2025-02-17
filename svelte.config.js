@@ -21,7 +21,8 @@ const config = {
 				// Ignore 404s
 				if (message.includes('Not found')) return;
 				throw new Error(message);
-			}
+			},
+			handleMissingId: 'ignore'
 		}
 	},
 
