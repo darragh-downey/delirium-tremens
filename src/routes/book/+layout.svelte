@@ -1,10 +1,11 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { base } from '$app/paths';
 	import ChapterNavigation from '$lib/components/ChapterNavigation.svelte';
 	import { chapters } from '$lib/data/chapters';
 	import { navigating } from '$app/stores';
 
-	$: currentSlug = $page.url.pathname.split('/').pop();
+	$: currentSlug = $page.url.pathname.replace(base, '').split('/').filter(Boolean).pop();
 </script>
 
 {#if $navigating}

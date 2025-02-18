@@ -6,6 +6,7 @@ references: []
 <script>
   export let title;
   import References from '$lib/components/References.svelte';
+  import { chapters } from '$lib/data/chapters';
 </script>
 
 # {title}
@@ -14,9 +15,10 @@ Welcome to a comprehensive guide on protecting critical infrastructure systems. 
 
 ## Table of Contents
 
-1. [Introduction to Cybersecurity](book/01-introduction)
-2. [Basic Security Concepts](book/02-basics)
-3. [Threat Analysis](book/03-threats)
-4. [Bibliography](book/references)
+<div class="table-of-contents">
+  {#each chapters as chapter}
+    <p>{chapter.chapter}. <a href="/book/{chapter.slug}/">{chapter.title}</a></p>
+  {/each}
+</div>
 
 <References citationIds={references} /> 

@@ -70,7 +70,7 @@
 			{/if}
 
 			<aside
-				class="fixed bottom-0 left-0 top-16 z-40 w-[min(72%,18rem)] transform overflow-y-auto border-r border-transparent bg-[#1C1C1C] px-4 pb-10 pt-6 text-white transition-transform duration-300 ease-in-out lg:block {isSidebarOpen
+				class="fixed bottom-0 left-0 top-16 z-40 max-h-[calc(100vh-4rem)] w-[min(72%,18rem)] transform overflow-y-auto border-r border-transparent bg-[#1C1C1C] px-4 pb-10 pt-6 text-white transition-transform duration-300 ease-in-out lg:block {isSidebarOpen
 					? 'translate-x-0'
 					: '-translate-x-full lg:translate-x-0'}"
 			>

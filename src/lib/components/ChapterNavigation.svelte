@@ -17,7 +17,10 @@
 	<!-- Previous chapter -->
 	<div>
 		{#if prevChapter}
-			<a href="{base}/book/{prevChapter.slug}" class="text-white no-underline hover:text-[#FF1493]">
+			<a
+				href="{base}/book/{prevChapter.slug}/"
+				class="text-white no-underline hover:text-[#FF1493]"
+			>
 				← {prevChapter.title}
 			</a>
 		{/if}
@@ -26,7 +29,10 @@
 	<!-- Next chapter -->
 	<div>
 		{#if nextChapter}
-			<a href="{base}/book/{nextChapter.slug}" class="text-white no-underline hover:text-[#FF1493]">
+			<a
+				href="{base}/book/{nextChapter.slug}/"
+				class="text-white no-underline hover:text-[#FF1493]"
+			>
 				{nextChapter.title} →
 			</a>
 		{/if}

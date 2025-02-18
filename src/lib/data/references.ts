@@ -17,5 +17,12 @@ export const references: Reference[] = [
 		source: 'NIST',
 		url: 'https://nvlpubs.nist.gov/nistpubs/CSWP/NIST.CSWP.04162018.pdf'
 	},
+	{
+		id: 'other-citation-id',
+		authors: ['Author Name'],
+		year: 2024,
+		title: 'Title of the Reference',
+		source: 'Source Name'
+	},
 	// Add more references as needed
 ]; 
