@@ -29,7 +29,12 @@ const config = {
 		}
 	},
 
-	extensions: ['.svelte', '.svx', '.md']
+	extensions: ['.svelte', '.svx', '.md'],
+
+	onwarn: (warning, handler) => {
+		if (warning.code.startsWith('a11y-')) return;
+		handler(warning);
+	}
 };
 
 export default config;
