@@ -1,21 +1,32 @@
 ---
-title: Bibliography
-chapter: 4
-sections:
-  - title: Complete Reference List
-    id: complete-reference-list
+title: References
+chapter: 19
+sections: []
+references: []
 ---
 
 <script>
-  export let title;
   import References from '$lib/components/References.svelte';
   import { references as allReferences } from '$lib/data/references';
+  import { base } from '$app/paths';
 </script>
 
-# {title}
-
-## Complete Reference List
+## Bibliography
 
 A comprehensive list of all sources cited in this book:
 
-<References citationIds={allReferences.map(ref => ref.id)} showHeader={false} /> 
+{#each allReferences as ref}
+  <div class="mb-4">
+    <p>
+      {#if ref.authors.length > 1}
+        {ref.authors.slice(0, -1).join(', ')} & {ref.authors[ref.authors.length - 1]}
+      {:else}
+        {ref.authors[0]}
+      {/if}
+      ({ref.year}). {ref.title}. <em>{ref.source}</em>.
+      {#if ref.url}
+        <a href={ref.url} class="text-[#FF1493] hover:underline">Link</a>
+      {/if}
+    </p>
+  </div>
+{/each} 

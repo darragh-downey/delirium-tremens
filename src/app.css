@@ -5,3 +5,73 @@
 html {
   scroll-behavior: smooth;
 }
+
+:root {
+  --primary: #9333EA;
+  --primary-hover: #A855F7;
+  --background: #1C1C1C;
+  --text: #FFFFFF;
+  --text-muted: #9CA3AF;
+  --text-secondary: #374151;
+  --border: rgba(147, 51, 234, 0.2);
+  --prose-text: #1C1C1C;
+  --prose-headings: #9333EA;
+  --prose-links: #9333EA;
+  --link-transition: transition-colors duration-200;
+  --link-base: text-[var(--text)] no-underline hover:text-[var(--primary)] var(--link-transition);
+  --link-muted: text-[var(--text-secondary)] no-underline hover:text-[var(--primary)] var(--link-transition);
+  --focus-ring: 0 0 0 2px var(--primary);
+}
+
+:root.light {
+  --background: #FFFFFF;
+  --primary: #9333EA;    /* Neon dark purple */
+  --primary-hover: #A855F7; /* Lighter purple for hover */
+  --text: #2D3748;        /* Slightly darker for better contrast */
+  --text-muted: #4A5568;   /* Balanced gray for muted text */
+  --text-secondary: #4A5568;
+  --border: rgba(147, 51, 234, 0.15);  /* Softer borders */
+  --prose-text: #2D3748;
+  --prose-headings: #9333EA;
+  --prose-links: #9333EA;
+  --prose-bullets: #9333EA;
+  --prose-quote-borders: #9333EA;
+  --prose-quote-bg: rgba(147, 51, 234, 0.05);
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark {
+  --background: #1C1C1C;
+  --primary: #FF1493;      /* Keep the neon pink for dark mode */
+  --primary-hover: #FF69B4;
+  --text: #FFFFFF;
+  --text-muted: #9CA3AF;
+  --text-secondary: #9CA3AF;
+  --border: rgba(255, 20, 147, 0.2);
+  --prose-text: #FFFFFF;
+  --prose-headings: #FF1493;
+  --prose-links: #FF1493;
+  --prose-bullets: #FF1493;
+}
+
+@layer base {
+  a:focus-visible,
+  button:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+  }
+
+  h2 {
+    position: relative;
+  }
+
+  h2:hover::before {
+    content: '#';
+    position: absolute;
+    left: -1.5rem;
+    color: var(--primary);
+    opacity: 0.4;
+    text-decoration: none;
+  }
+}

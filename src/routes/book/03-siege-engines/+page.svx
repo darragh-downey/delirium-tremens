@@ -7,7 +7,7 @@ sections:
   - title: Threat Assessment
     id: threat-assessment
   - title: Detailed Cyberattack Strategies
-    id: detailed-cyberattack-strategies
+    id: cyberattack-strategies
   - title: Cyberattack Strategy 1: IT Compromise
     id: cyberattack-strategy-1
   - title: Cyberattack Strategy 2: OT Compromise
@@ -16,75 +16,80 @@ sections:
     id: cyberattack-strategy-3
   - title: Cyberattack Strategy 4: IT Compromise via OT
     id: cyberattack-strategy-4
-references:
-  - nist-framework
+references: []
 ---
 
 <script>
-  export let title;
-  export let references;
-  import References from '$lib/components/References.svelte';
+  import AutoSection from '$lib/components/AutoSection.svelte';
 </script>
 
-# {title}
 
-## Overview of Compromise Methods
+<AutoSection id="overview-threats" title="Overview of Compromise Methods">
 List the comprehensive ways attackers compromise systems (as detailed in the previous response). This section will serve as a knowledge base for readers to understand the arsenal attackers have at their disposal.
 
 ### Detailed Cyberattack Strategies
 In this section, we will explore four specific kill chains, each illustrating a different approach attackers take to compromise IT or OT systems. Each kill chain will be structured according to the phases outlined in the Cyber Kill Chain and tailored to the specifics of IT/OT environments.
+</AutoSection>
 
-
-## Cyberattack Strategy 1: IT Compromise
+<AutoSection id="cyberattack-strategy-1" title="Cyberattack Strategy 1: IT Compromise">
 Objective: To gain unauthorised access to an IT network and exfiltrate sensitive data.
+
 ### Phases of the Attack:
-- Reconnaissance: Attackers gather information through open-source intelligence (OSINT), social media profiles, and network scanning.
-- Weaponization: Crafting a malicious attachment with embedded malware to exploit an unpatched software vulnerability.
-- Delivery: Sending phishing emails with the weaponised payload to targeted employees.
-- Exploitation: The payload is executed when a user opens the attachment, exploiting the vulnerability to gain initial access.
-- Installation: The attacker installs a backdoor trojan for persistent access.
-- Command and Control (C2): Establishing a C2 server for issuing commands and data exfiltration.
-- Actions on Objectives: Exfiltrating confidential data and deploying additional malware to extend control.
+<ul>
+  <li>Reconnaissance: Attackers gather information through open-source intelligence (OSINT), social media profiles, and network scanning.</li>
+  <li>Weaponization: Crafting a malicious attachment with embedded malware to exploit an unpatched software vulnerability.</li>
+  <li>Delivery: Sending phishing emails with the weaponised payload to targeted employees.</li>
+  <li>Exploitation: The payload is executed when a user opens the attachment, exploiting the vulnerability to gain initial access.</li>
+  <li>Installation: The attacker installs a backdoor trojan for persistent access.</li>
+  <li>Command and Control (C2): Establishing a C2 server for issuing commands and data exfiltration.</li>
+  <li>Actions on Objectives: Exfiltrating confidential data and deploying additional malware to extend control.</li>
+</ul>
+</AutoSection>
 
 
-
-## Cyberattack Strategy 2: OT Compromise
+<AutoSection id="cyberattack-strategy-2" title="Cyberattack Strategy 2: OT Compromise">
 Objective: To disrupt operations in an industrial control system (ICS) by compromising OT environments.
+
 ### Phases of the Attack:
-- Reconnaissance: Attacking actors identify OT assets by scouring exposed IPs, gaining insights into SCADA systems and ICS configurations.
-- Weaponization: Creating tailored malware that targets specific PLCs (Programmable Logic Controllers) or HMI (Human-Machine Interface) software.
-- Delivery: Using USB devices or physical intrusion to introduce the malware into the OT environment.
-- Exploitation: Malware is executed and begins interfacing with the OT systems, sending malicious commands to critical components.
-- Installation: Establishing a foothold in OT firmware or underlying systems to ensure sustained control.
-- Command and Control (C2): The attacker sets up covert communication to monitor and influence OT processes.
-- Actions on Objectives: Sabotaging industrial operations, manipulating system outputs, or altering safety protocols.
+<ul>
+  <li>Reconnaissance: Attacking actors identify OT assets by scouring exposed IPs, gaining insights into SCADA systems and ICS configurations.</li>
+  <li>Weaponization: Creating tailored malware that targets specific PLCs (Programmable Logic Controllers) or HMI (Human-Machine Interface) software.</li>
+  <li>Delivery: Using USB devices or physical intrusion to introduce the malware into the OT environment.</li>
+  <li>Exploitation: Malware is executed and begins interfacing with the OT systems, sending malicious commands to critical components.</li>
+  <li>Installation: Establishing a foothold in OT firmware or underlying systems to ensure sustained control.</li>
+  <li>Command and Control (C2): The attacker sets up covert communication to monitor and influence OT processes.</li>
+  <li>Actions on Objectives: Sabotaging industrial operations, manipulating system outputs, or altering safety protocols.</li>
+</ul>
+</AutoSection>
 
 
-
-## Cyberattack Strategy 3: OT Compromise via IT
+<AutoSection id="cyberattack-strategy-3" title="Cyberattack Strategy 3: OT Compromise via IT">
 Objective: To breach an OT network by exploiting weaknesses in the connected IT infrastructure.
+
 ### Phases of the Attack:
-- Reconnaissance: Identifying connections between IT systems and OT environments (e.g., shared VPNs or network bridges).
-- Weaponization: Customising a multi-stage malware that transitions from IT to OT networks.
-- Delivery: Injecting the malware through phishing emails or exploiting remote access tools used by IT staff.
-- Exploitation: The payload infiltrates IT systems and begins probing for OT access points.
-- Installation: Establishing a presence in both IT and OT systems, creating pathways for lateral movement.
-- Command and Control (C2): Setting up dual communication paths to command both environments.
-- Actions on Objectives: Sending rogue commands to OT systems to disrupt operations, while maintaining a façade in the IT network to avoid immediate detection.
+<ul>
+  <li>Reconnaissance: Identifying connections between IT systems and OT environments (e.g., shared VPNs or network bridges).</li>
+  <li>Weaponization: Customising a multi-stage malware that transitions from IT to OT networks.</li>
+  <li>Delivery: Injecting the malware through phishing emails or exploiting remote access tools used by IT staff.</li>
+  <li>Exploitation: The payload infiltrates IT systems and begins probing for OT access points.</li>
+  <li>Installation: Establishing a presence in both IT and OT systems, creating pathways for lateral movement.</li>
+  <li>Command and Control (C2): Setting up dual communication paths to command both environments.</li>
+  <li>Actions on Objectives: Sending rogue commands to OT systems to disrupt operations, while maintaining a façade in the IT network to avoid immediate detection.</li>
+</ul>
+</AutoSection>
 
 
-
-## Cyberattack Strategy 4: IT Compromise via OT
+<AutoSection id="cyberattack-strategy-4" title="Cyberattack Strategy 4: IT Compromise via OT">
 Objective: To infiltrate an IT network through compromised OT equipment or systems.
+
 ### Phases of the Attack:
-- Reconnaissance: Studying the OT environment, identifying connected IoT devices, or exploiting industrial sensors linked to IT infrastructure.
-- Weaponization: Crafting malware that can leverage vulnerabilities in industrial protocols or hardware that connects OT to IT.
-- Delivery: Breaching OT systems via supply chain attacks, infected vendor software, or remote maintenance tools.
-- Exploitation: The attacker manipulates OT systems to relay the malware into the IT network through shared interfaces.
-- Installation: Malware is installed in IT servers or workstations, creating pivot points for further attacks.
-- Command and Control (C2): Establishing communication from compromised OT systems to maintain stealthy control over IT assets.
-- Actions on Objectives: Gaining access to sensitive IT databases, stealing intellectual property, or manipulating IT processes to disrupt business operations.
-
-
-
-<References citationIds={references} /> 
+<ul>
+  <li>Reconnaissance: Studying the OT environment, identifying connected IoT devices, or exploiting industrial sensors linked to IT infrastructure.</li>
+  <li>Weaponization: Crafting malware that can leverage vulnerabilities in industrial protocols or hardware that connects OT to IT.</li>
+  <li>Delivery: Breaching OT systems via supply chain attacks, infected vendor software, or remote maintenance tools.</li>
+  <li>Exploitation: The attacker manipulates OT systems to relay the malware into the IT network through shared interfaces.</li>
+  <li>Installation: Malware is installed in IT servers or workstations, creating pivot points for further attacks.</li>
+  <li>Command and Control (C2): Establishing communication from compromised OT systems to maintain stealthy control over IT assets.</li>
+  <li>Actions on Objectives: Gaining access to sensitive IT databases, stealing intellectual property, or manipulating IT processes to disrupt business operations.</li>
+</ul>
+</AutoSection>

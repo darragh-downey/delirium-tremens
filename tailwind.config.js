@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: 'class',
 	content: ['./src/**/*.{html,js,svelte,ts,svx,md}'],
 	theme: {
 		extend: {
@@ -39,6 +40,12 @@ export default {
 			},
 			fontFamily: {
 				display: ['Inter var', 'system-ui', 'sans-serif']
+			},
+			colors: {
+				background: 'var(--background)',
+				primary: 'var(--primary)',
+				'primary-hover': 'var(--primary-hover)',
+				text: 'var(--text)'
 			}
 		}
 	},

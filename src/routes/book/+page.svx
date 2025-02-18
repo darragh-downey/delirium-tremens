@@ -4,22 +4,11 @@ references: []
 ---
 
 <script>
-  export let title;
-  import References from '$lib/components/References.svelte';
-  import { chapters } from '$lib/data/chapters';
   import { base } from '$app/paths';
 </script>
 
-# {title}
+# Introduction
 
-Welcome to a comprehensive guide on protecting critical infrastructure systems. This book covers essential concepts, strategies, and best practices for securing vital systems and networks that support our society's critical operations.
+Welcome to the guide on protecting critical infrastructure. This book covers essential concepts, strategies, and best practices for securing vital systems and networks that support our society's critical operations.
 
-## Table of Contents
-
-<div class="table-of-contents">
-  {#each chapters as chapter}
-    <p>{chapter.chapter}. <a href="{base}/{chapter.slug}/">{chapter.title}</a></p>
-  {/each}
-</div>
-
-<References citationIds={references} /> 
+Read on for more.

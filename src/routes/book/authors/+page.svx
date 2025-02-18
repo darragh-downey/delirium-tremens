@@ -10,12 +10,9 @@ references: []
 ---
 
 <script>
-  export let title;
-  import References from '$lib/components/References.svelte';
   import { base } from '$app/paths';
 </script>
 
-# {title}
 
 <div class="mx-auto max-w-2xl py-8">
   
@@ -65,5 +62,3 @@ We would like to express our gratitude to:
 - The organisations and individuals who provided valuable insights and feedback
 - The open-source community for their continuous contributions to cybersecurity
 - The cybersecurity community for their ongoing efforts in protecting critical infrastructure
-
-<References citationIds={references} /> 

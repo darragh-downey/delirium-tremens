@@ -1,0 +1,14 @@
+---
+title: Chapter Title
+chapter: N
+sections: []
+references: []
+---
+
+<script lang="ts">
+	import type { PageMetadata } from '$lib/types';
+	// TypeScript will infer the metadata type from the frontmatter
+	declare const metadata: PageMetadata;
+</script>
+
+Content starts here... 

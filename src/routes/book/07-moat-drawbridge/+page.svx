@@ -1,21 +1,14 @@
 ---
-title: The Moat Drawbridge
+title: The Moat and Drawbridge
 chapter: 7
 sections:
   - title: Introduction
     id: introduction
-references:
-  - nist-framework
+references: []
 ---
 
 <script>
-  export let title;
-  export let references;
-  import References from '$lib/components/References.svelte';
+  
 </script>
 
-# {title}
-
 Content coming soon...
-
-<References citationIds={references} />

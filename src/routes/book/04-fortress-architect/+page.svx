@@ -4,19 +4,10 @@ chapter: 4
 sections:
   - title: Introduction
     id: introduction
-references:
-  - nist-framework
+references: []
 ---
 
 <script>
-  export let title;
-  export let references;
-  import References from '$lib/components/References.svelte';
 </script>
 
-# {title}
-
-Fortress under construction...
-
-
-<References citationIds={references} /> 
+Fortress under construction... 

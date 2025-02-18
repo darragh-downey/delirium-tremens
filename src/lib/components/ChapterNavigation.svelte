@@ -1,26 +1,37 @@
 <script lang="ts">
 	import { base } from '$app/paths';
+	import type { Chapter } from '$lib/types';
+	import KeyboardNavigation from './KeyboardNavigation.svelte';
 
-	export let chapters: {
-		title: string;
-		slug: string;
-		chapter: number;
-	}[];
+	function getChapterUrl(chapter: Chapter): string {
+		return `${base}/book/${chapter.slug}/`;
+	}
+
+	export let chapters: Chapter[];
 	export let currentSlug: string | undefined = '';
 
 	$: currentIndex = chapters.findIndex((c) => c.slug === currentSlug);
-	$: console.log('Navigation:', { currentSlug, currentIndex, prevChapter, nextChapter });
 	$: prevChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
 	$: nextChapter = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
+
+	function handleNavigate() {
+		window.scrollTo(0, 0);
+	}
 </script>
 
-<div class="mt-16 flex justify-between border-t border-[#FF1493] pt-6 text-white">
+<KeyboardNavigation {prevChapter} {nextChapter} />
+
+<div
+	class="mt-12 flex flex-col justify-between gap-4 border-t border-[var(--primary)] pt-6 text-[var(--text)] sm:mt-16 sm:flex-row sm:gap-0"
+>
 	<!-- Previous chapter -->
-	<div>
+	<div class="text-center sm:text-left">
 		{#if prevChapter}
 			<a
-				href="{base}/book/{prevChapter.slug}/"
-				class="text-white no-underline hover:text-[#FF1493]"
+				class="text-[var(--text)] no-underline hover:text-[var(--primary)]"
+				href={getChapterUrl(prevChapter)}
+				on:click={handleNavigate}
+				aria-label="Previous chapter: {prevChapter.title}"
 			>
 				← {prevChapter.title}
 			</a>
@@ -28,11 +39,13 @@
 	</div>
 
 	<!-- Next chapter -->
-	<div>
+	<div class="text-center sm:text-right">
 		{#if nextChapter}
 			<a
-				href="{base}/book/{nextChapter.slug}/"
+				href={getChapterUrl(nextChapter)}
 				class="text-white no-underline hover:text-[#FF1493]"
+				on:click={handleNavigate}
+				aria-label="Next chapter: {nextChapter.title}"
 			>
 				{nextChapter.title} →
 			</a>
