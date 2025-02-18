@@ -14,7 +14,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: '/critical-infrastructure/book'
+			base: '/critical-infrastructure'
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {

@@ -1,5 +1,14 @@
 export const chapters = [
 	{
+		title: 'About the Authors',
+		slug: 'authors',
+		chapter: 0,
+		sections: [
+			{ title: 'Contributors', id: 'contributors' },
+			{ title: 'Acknowledgments', id: 'acknowledgments' }
+		]
+	},
+	{
 		title: 'Building a Unified Defence',
 		slug: '01-introduction',
 		chapter: 1,

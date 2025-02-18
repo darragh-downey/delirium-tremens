@@ -4,5 +4,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
 	plugins: [sveltekit(), tailwindcss()],
-	base: '/critical-infrastructure/book/'
+	base: '/critical-infrastructure/'
 });

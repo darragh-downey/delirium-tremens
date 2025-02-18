@@ -9,6 +9,7 @@
 	export let currentSlug: string | undefined = '';
 
 	$: currentIndex = chapters.findIndex((c) => c.slug === currentSlug);
+	$: console.log('Navigation:', { currentSlug, currentIndex, prevChapter, nextChapter });
 	$: prevChapter = currentIndex > 0 ? chapters[currentIndex - 1] : null;
 	$: nextChapter = currentIndex < chapters.length - 1 ? chapters[currentIndex + 1] : null;
 </script>

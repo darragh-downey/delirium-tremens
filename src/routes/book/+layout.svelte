@@ -5,7 +5,13 @@
 	import { chapters } from '$lib/data/chapters';
 	import { navigating } from '$app/stores';
 
-	$: currentSlug = $page.url.pathname.replace(base, '').split('/').filter(Boolean).pop();
+	$: currentSlug = $page.url.pathname
+		.replace(base, '')
+		.replace('/book/', '')
+		.split('/')
+		.filter(Boolean)[0];
+
+	$: console.log('Current slug:', currentSlug);
 </script>
 
 {#if $navigating}

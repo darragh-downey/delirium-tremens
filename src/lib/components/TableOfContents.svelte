@@ -31,7 +31,7 @@
 					{#each chapter.sections as section}
 						<li>
 							<a
-								href="{base}/{chapter.slug}/#{section.id}"
+								href="{base}/book/{chapter.slug}/#{section.id}"
 								class="text-gray-300 no-underline hover:text-[#FF1493]"
 							>
 								{section.title}
