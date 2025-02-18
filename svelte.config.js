@@ -14,12 +14,15 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: '/critical-infrastructure'
+			base: '/book'
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
 				// Ignore 404s
-				if (message.includes('Not found')) return;
+				if (message.includes('Not found') || path.includes('/book/')) {
+					console.warn(`Warning: ${path} not found`);
+					return;
+				}
 				throw new Error(message);
 			},
 			handleMissingId: 'ignore'

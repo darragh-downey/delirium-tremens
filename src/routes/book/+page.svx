@@ -7,6 +7,7 @@ references: []
   export let title;
   import References from '$lib/components/References.svelte';
   import { chapters } from '$lib/data/chapters';
+  import { base } from '$app/paths';
 </script>
 
 # {title}
@@ -17,7 +18,7 @@ Welcome to a comprehensive guide on protecting critical infrastructure systems. 
 
 <div class="table-of-contents">
   {#each chapters as chapter}
-    <p>{chapter.chapter}. <a href="/book/{chapter.slug}/">{chapter.title}</a></p>
+    <p>{chapter.chapter}. <a href="{base}/book/{chapter.slug}/">{chapter.title}</a></p>
   {/each}
 </div>
 
