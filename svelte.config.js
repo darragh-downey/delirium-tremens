@@ -18,14 +18,18 @@ const config = {
 		},
 		prerender: {
 			handleHttpError: ({ path, referrer, message }) => {
-				// Ignore 404s
-				if (message.includes('Not found') || path.includes('/book/')) {
+				// Ignore 404s for book pages
+				if (path.includes('/critical-infrastructure/book/')) {
 					console.warn(`Warning: ${path} not found`);
 					return;
 				}
 				throw new Error(message);
 			},
-			handleMissingId: 'ignore'
+			handleMissingId: 'ignore',
+			entries: [
+				'/critical-infrastructure/book/*',
+				'/critical-infrastructure/book/authors'
+			]
 		}
 	},
 
