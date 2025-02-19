@@ -14,5 +14,7 @@
 			#
 		</a>
 	</h2>
-	<slot />
+	<div class="text-[var(--text)]">
+		<slot />
+	</div>
 </section> 

@@ -8,7 +8,7 @@
 	<div
 		class="mx-auto w-full max-w-prose
 		prose-headings:scroll-mt-24 prose-headings:text-[var(--prose-headings)]
-		prose-p:text-[var(--prose-text)] prose-li:text-[var(--prose-text)]
+		prose-p:text-[var(--text)] prose-li:text-[var(--text)]
 		prose-ul:marker:text-[var(--prose-bullets)]
 		prose-ol:marker:text-[var(--prose-bullets)]"
 	>
