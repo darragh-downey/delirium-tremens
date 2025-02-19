@@ -28,7 +28,7 @@
 		</div>
 
 		<div class="hidden items-center space-x-4 lg:flex">
-			<a href="{base}/" class="text-xl font-bold text-[var(--text)] hover:text-[var(--text-muted)]">
+			<a href="/" class="text-xl font-bold text-[var(--text)] hover:text-[var(--text-muted)]">
 				Defending Critical Infrastructure
 			</a>
 		</div>

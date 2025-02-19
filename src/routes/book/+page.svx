@@ -11,4 +11,4 @@ references: []
 
 Welcome to the guide on protecting critical infrastructure. This book covers essential concepts, strategies, and best practices for securing vital systems and networks that support our society's critical operations.
 
-Read on for more.
+This is a work in progress and material is subject to change.
