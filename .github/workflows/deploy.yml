@@ -30,8 +30,11 @@ jobs:
       - name: Set pnpm config
         run: pnpm config set only-build-dependencies false
 
+      - name: Clear pnpm cache
+        run: pnpm store prune
+
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile
+        run: pnpm install -no-frozen-lockfile --ignore-scripts
 
       - name: Build
         run: pnpm build
