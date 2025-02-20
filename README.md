@@ -1,5 +1,7 @@
 # Delirium Tremens
 
+A blog exploring solutions to programming interview questions from "Elements of Programming Interviews" along with deep dives into computer science and cybersecurity topics.
+
 ## Development
 
 This project is built with:
@@ -14,8 +16,8 @@ This project is built with:
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/oit-cyber/book.git
-cd book
+git clone https://github.com/darragh-downey/delirium-tremens.git
+cd delirium-tremens
 ```
 
 2. Install dependencies:
@@ -48,4 +50,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 
 ## Acknowledgments
 
-Standing on the shoulders of giants - this project draws inspiration from various open-source projects and cybersecurity frameworks.
+Standing on the shoulders of giants - this project draws inspiration from various open-source projects and programming resources.
