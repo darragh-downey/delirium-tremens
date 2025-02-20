@@ -14,7 +14,7 @@ const config = {
 			fallback: '404.html'
 		}),
 		paths: {
-			base: process.env.GITHUB_ACTIONS ? '/critical-infra/book' : ''
+			base: process.env.GITHUB_ACTIONS ? '/delirium-tremens' : ''
 		},
 		prerender: {
 			entries: ['*'],

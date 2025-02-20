@@ -29,7 +29,7 @@
 
 		<div class="hidden items-center space-x-4 lg:flex">
 			<a href="/" class="text-xl font-bold text-[var(--text)] hover:text-[var(--text-muted)]">
-				Defending Critical Infrastructure
+				Delirium Tremens
 			</a>
 		</div>
 		<div class="hidden lg:block">

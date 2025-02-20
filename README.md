@@ -1,17 +1,4 @@
-# Defending Critical Infrastructure
-
-A comprehensive guide to protecting critical infrastructure through the lens of medieval fortification analogies. This interactive book explores the parallels between historical defensive strategies and modern cybersecurity practices.
-
-## Features
-
-- 📚 Interactive chapter navigation
-- 🔍 Section-based navigation with smooth scrolling
-- 💡 Text highlighting functionality
-- 📊 Reading progress indicator
-- ⌨️ Keyboard shortcuts for navigation
-- 🌙 Dark mode optimized
-- 📱 Responsive design
-- ♿ Accessibility focused
+# Delirium Tremens
 
 ## Development
 
@@ -54,10 +41,6 @@ pnpm build
 - `Alt + ←`: Navigate to previous chapter
 - `Alt + →`: Navigate to next chapter
 - `Enter`: When focused on a section link, jump to that section
-
-## Contributing
-
-Contributions are welcome! Please read our contributing guidelines before submitting pull requests.
 
 ## License
 

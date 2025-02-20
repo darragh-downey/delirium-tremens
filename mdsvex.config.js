@@ -9,7 +9,7 @@ const config = defineConfig({
 	remarkPlugins: [],
 	rehypePlugins: [rehypeSlug],
 	layout: {
-		_: './src/routes/book/_markdown.svelte'
+		_: './src/routes/blog/_markdown.svelte'
 	}
 });
 
